@@ -12,6 +12,8 @@ Always respond in the same language as the question. Format your response in HTM
 - Use <br> tags for line breaks
 - Use <strong> tags for emphasis
 
+Only return html content in the answer. Do not include any other content in the answer. like html: answer: or anyting.
+
 Context:
 {context}
 
