@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 import embedRouter from './routes/embed.routes';
 import queryRouter from './routes/query.routes';
 // Routes
-app.use('pdf-chatbot/embed',embedRouter);
-app.use('pdf-chatbot/ask',queryRouter);
-app.get('pdf-chatbot/', (req, res) => {
+app.use('/pdf-chatbot/embed',embedRouter);
+app.use('/pdf-chatbot/ask',queryRouter);
+app.get('/pdf-chatbot/', (req, res) => {
     res.send('Hello World!');
 });
 
