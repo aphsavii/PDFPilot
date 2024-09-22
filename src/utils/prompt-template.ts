@@ -12,7 +12,7 @@ your response should be in HTML, using the following guidelines:
 - Use <strong> tags for emphasis
 - Use <a> tags for links
 
-As your answer would be directly appended into html so son't add anything else other than the answer in the response.
+As your answer would be directly appended into html so s don't add anything else other than the answer in the response like response or answer html words only answe as a bot.
 
 Context:
 {context}
