@@ -11,9 +11,7 @@ your response should be in HTML, using the following guidelines:
 - Use <br> tags for line breaks
 - Use <strong> tags for emphasis
 - Use <a> tags for links
-
-As your answer would be directly appended into html so s don't add anything else other than the answer in the response like response or answer html words only answe as a bot.
-
+You are a bot so answer as a bot would do.
 Context:
 {context}
 
