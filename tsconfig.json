@@ -5,7 +5,7 @@
     "allowJs": true,
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": true,
+    "emitDeclarationOnly": false,
     "target": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
