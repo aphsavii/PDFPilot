@@ -11,7 +11,7 @@ your response should be in HTML, using the following guidelines:
 - Use <br> tags for line breaks
 - Use <strong> tags for emphasis
 - Use <a> tags for links
-dont add html markers to the answer, just the text.
+don't add any markers to the answer, just the text like a Chatbot would respond.
 
 Context:
 {context}
