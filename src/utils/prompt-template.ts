@@ -1,14 +1,23 @@
 import { PromptTemplate } from "@langchain/core/prompts";
 
-const template = ` Use the following pieces of context to answer the question at the end.
-// If you don't know the answer from the context, just say that you don't know, don't try to make up an answer give the exact what is in the context.
-Always must answer in the same language as the question and generate html response with extra and bold size for headings and li for lists and breaks for spacing.
-only answer the html response part not any other text like html:  or anything else.
+const template = `
+Use the following pieces of context to answer the question at the end. If you don't know the answer based on the provided context, simply state that you don't have enough information to answer accurately. Do not attempt to generate an answer outside of the given context.
+
+Always respond in the same language as the question. Format your response in HTML, using the following guidelines:
+- Use <h2> tags for main headings
+- Use <h3> tags for subheadings
+- Use <ul> and <li> tags for unordered lists
+- Use <ol> and <li> tags for ordered lists
+- Use <p> tags for paragraphs
+- Use <br> tags for line breaks
+- Use <strong> tags for emphasis
+
+Context:
 {context}
 
 Question: {question}
 
-Helpful Answer:`;
+Answer:`;
 
 const promptTemplate = PromptTemplate.fromTemplate(template);
 
