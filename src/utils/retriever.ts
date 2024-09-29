@@ -3,11 +3,10 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 import { promptTemplate } from "../utils/prompt-template";
 import LLM from "../ml-models/openai.model";
 import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
-import { openAiEmbedder } from "../ml-models/embedder.model";
 
 
-async function* retrieve(query: string, index: string) {
-    const vectorStore = await initVectorStore(index,openAiEmbedder);
+async function* retrieve(query: string, index: string[]) {
+    const vectorStore = await initVectorStore(index);
     const retriever = vectorStore.asRetriever({ k: 10, searchType: "similarity" });
     const context = await retriever.invoke(query);
 

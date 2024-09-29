@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 import { Request, RequestHandler, Response } from "express";
 import { File as MulterFile } from "multer";
 import fs from "fs";
-import {openAiEmbedder} from "../ml-models/embedder.model";
 
 interface CustomRequest extends Request {
     files: {
@@ -14,20 +13,17 @@ interface CustomRequest extends Request {
 }
 const embedPdfController: RequestHandler = async (req: Request, res: Response) => {
     const customReq = req as CustomRequest;
-    const fileId = "test2";
+    const fileId = uuidv4();
     try {
-        const vectorStore = await initVectorStore(fileId,openAiEmbedder);
+        const vectorStore = await initVectorStore(fileId);
         if (!customReq?.files?.pdf)
             return res.status(400).json({
                 msg: "No pdf file uploaded",
             });
         const pdfUrl = customReq?.files?.pdf[0].path;
         const docs = await loadPdf(pdfUrl);
-        // console.log(fileId);
-
         const chunks = await splitter(docs);
         const embeds = await vectorStore.addDocuments(chunks);
-
         if (!embeds)
             return res.status(500).json({
                 msg: "Failed to embed documents",

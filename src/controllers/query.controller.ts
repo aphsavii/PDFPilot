@@ -15,7 +15,7 @@ const queryController: RequestHandler = async (req: Request, res: Response) => {
         headersSent = true;
 
         // Stream the response
-        for await (const chunk of retrieve(query, fileId)) {
+        for await (const chunk of retrieve(query, [fileId])) {
             res.write(`data: ${JSON.stringify(chunk)}\n\n`);
         }
 

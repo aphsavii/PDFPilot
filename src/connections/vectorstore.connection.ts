@@ -1,6 +1,7 @@
 import { ElasticVectorSearch, ElasticClientArgs } from "@langchain/community/vectorstores/elasticsearch";
 import { Client, ClientOptions } from "@elastic/elasticsearch";
-import { OpenAIEmbeddings } from "@langchain/openai";
+import { embedderModel } from "../ml-models/embedder.model";
+
 
 const elasticConfig: ClientOptions = {
     node: process.env.ELASTIC_URL,
@@ -9,12 +10,12 @@ const elasticConfig: ClientOptions = {
     }
 };
 
-const initVectorStore = async (index:string, embedModel:OpenAIEmbeddings) => {
+const initVectorStore = async (index) => {
     const elasticClientArgs: ElasticClientArgs = {
         client: new Client(elasticConfig),
         indexName: index,
     };
-    const vectorStore = new ElasticVectorSearch(embedModel, elasticClientArgs);
+    const vectorStore = new ElasticVectorSearch(embedderModel, elasticClientArgs);
     return vectorStore;
 };
 
