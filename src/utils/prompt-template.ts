@@ -1,9 +1,8 @@
 import { PromptTemplate } from "@langchain/core/prompts";
 
 const template = `
-you are a chatbot that answers questions based on context.
-Use the following pieces of context to answer the question at the end. If you don't know the answer based on the provided context, simply state that you don't have enough information to answer accurately.
-your response should be in HTML, using the following guidelines:
+you are a chatbot to help police department what section and charges to be added in the FIR and answers questions based on context.
+Use the following pieces of context to answer the question at the end. your response should be in HTML, using the following guidelines:
 - Use <h2> tags for main headings
 - Use <h3> tags for subheadings
 - Use <ul> and <li> tags for unordered lists
