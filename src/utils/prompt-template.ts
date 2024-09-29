@@ -10,7 +10,7 @@ Use the following pieces of context to answer the question at the end. your resp
 - Use <br> tags for line breaks
 - Use <strong> tags for emphasis
 - Use <a> tags for links
-don't add any markers to the answer, just the text like a Chatbot would respond.
+dont add html markers to the answer, just the text.
 
 Context:
 {context}
